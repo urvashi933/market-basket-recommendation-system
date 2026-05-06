@@ -37,7 +37,11 @@ The cleansed transactional dataset was aggregated into a one-hot encoded matrix 
 
 ## Frequent Itemsets Summary
 Frequent itemset mining was executed utilizing the computationally efficient **FP-Growth algorithm**. We systematically evaluated varying minimum support thresholds (0.01, 0.05, 0.1, 0.15) to observe the decay rate of generated itemsets.
-- We elected a **minimum support threshold of 0.05 (5%)**. This threshold successfully filters out statistical noise and highly idiosyncratic purchases, while retaining statistically significant, high-volume itemsets that warrant strategic business intervention.
+
+![Number of Frequent Itemsets vs Minimum Support](images/support_vs_itemsets.png)
+*Interpretation: The chart illustrates an exponential decay in the number of frequent itemsets as the minimum support threshold increases. At a very low support of 0.01, there are hundreds of itemsets (creating noise), while at 0.15, almost no itemsets remain. We selected 0.05 as the optimal elbow point to balance retaining actionable patterns while filtering out statistical noise.*
+
+- We elected a **minimum support threshold of 0.05 (5%)** because it successfully filters out statistical noise and highly idiosyncratic purchases, while retaining statistically significant, high-volume itemsets that warrant strategic business intervention.
 
 ## Association Rules Summary
 Association rules were generated and evaluated against three primary statistical metrics:
@@ -46,6 +50,9 @@ Association rules were generated and evaluated against three primary statistical
 - **Lift:** The ratio of observed support to expected support assuming statistical independence. A Lift > 1 indicates a positive, synergistic relationship between the products. This is our primary metric for determining rule strength.
 
 Rules were heavily filtered to isolate the most actionable insights, requiring a `lift > 1.2` and a `confidence > 0.3`.
+
+![Association Rules: Support vs Confidence](images/rules_scatter.png)
+*Interpretation: This scatter plot visualizes the filtered association rules. The x-axis represents Support (popularity) and the y-axis represents Confidence (reliability). The size and color gradient of the points reflect the Lift (strength of association). The highest lift rules (dark purple/large dots) cluster around the 5% support mark with very high confidence (70-85%), indicating highly reliable, strong associations perfect for targeted promotions.*
 
 ## Top Rules with Interpretation
 The algorithm uncovered several high-value product affinities. Below are 10 of the most significant rules:
@@ -101,22 +108,30 @@ The algorithm uncovered several high-value product affinities. Below are 10 of t
     - **Business Meaning:** Proves that regardless of the entry point into the breakfast category, the remaining items are highly susceptible to cross-selling.
 
 ## Final Business Recommendations
+
 1. **Strategic Product Bundling:** 
-   - Deploy a "Complete Breakfast Bundle" SKU encompassing Bread Loaf, Butter, and Chocolate Spread. Price at a slight margin discount to drive volume on the triad.
-   - Introduce a "Domestic Care Kit" combining Dishwash Liquid and Fabric Softener.
+   - **Analysis Connection:** The rule `{Butter, Bread Loaf} -> {Chocolate Spread}` has an extraordinarily high confidence of 86.79% and a lift of 7.23. 
+   - **Specific Recommendation:** The company should deploy a "Complete Breakfast Bundle" SKU encompassing Bread Loaf, Butter, and Chocolate Spread. Pricing this triad at a 5% margin discount will heavily drive volume and capture the remaining 13% of customers who don't already buy all three.
+
 2. **Planogram & Store Layout Optimization:**
-   - Execute spatial co-location by placing secondary displays of Salsa Dip directly within the Salty Snacks aisle (adjacent to Nachos and Potato Chips) to capture immediate impulse conversions.
-   - Ensure Chocolate Spread is cross-merchandised on end-caps near the fresh bakery/bread section.
+   - **Analysis Connection:** The rules `{Nachos} -> {Salsa Dip}` and `{Potato Chips} -> {Salsa Dip}` yield lifts of 7.92 and 7.52 respectively, with confidence scores exceeding 73%.
+   - **Specific Recommendation:** The company should execute spatial co-location by installing secondary display end-caps of Salsa Dip directly within the Salty Snacks aisle (sandwiched between Nachos and Potato Chips) to capture immediate impulse conversions.
+
 3. **Algorithmic Cross-Selling:**
-   - E-commerce integration: Program the recommendation engine to trigger a "Frequently Bought Together" modal for Salsa Dip the moment Nachos enter the digital cart.
-   - Implement point-of-sale (POS) prompt systems for cashiers to suggest Fabric Softener when Dishwash Liquid is scanned.
+   - **Analysis Connection:** The rule `{Dishwash Liquid} -> {Fabric Softener}` possesses the highest lift in the entire dataset at 8.55, indicating they are almost exclusively purchased together.
+   - **Specific Recommendation:** The company should program the online recommendation engine to trigger an immediate "Frequently Bought Together" pop-up for Fabric Softener the moment Dishwash Liquid enters a digital cart. Cashiers should also be prompted on the POS screen to verbally suggest it.
+
 4. **Targeted Promotional Campaigns:**
-   - Deploy loss-leader or conditional discount strategies: "Purchase Nachos at full retail, receive 20% off Salsa Dip." Leveraging the high confidence rule ensures the promotion reliably inflates the net basket value.
+   - **Analysis Connection:** The bidirectional rules between `{Chocolate Spread}` and `{Butter}` show that promoting one will naturally lift the other (Lift: 6.87).
+   - **Specific Recommendation:** The company should deploy a conditional discount strategy: "Buy Chocolate Spread at full retail price, receive 20% off Butter." Leveraging this established high-confidence affinity guarantees an inflated net basket value without discounting both items.
+
 5. **Rules to Exclude from Strategy:**
-   - Strictly ignore high-support, low-lift rules (e.g., Bread Loaf $\rightarrow$ Milk with a Lift ~ 1.0). These represent coincidental co-occurrence of universally popular items. Allocating promotional budget here yields zero incremental revenue.
+   - **Analysis Connection:** Rules with high Support (>10%) but low Lift (~1.0) represent statistically independent, coincidental purchases (e.g. Milk and Bread).
+   - **Specific Recommendation:** The company should strictly ignore investing marketing budget into cross-promoting items with a lift near 1.0. Allocating promotional budget to these pairings yields zero incremental revenue because the customer was going to buy them both anyway.
+
 6. **Improving Sales & Customer Experience:**
-   - **Sales Impact:** By aligning our merchandising with empirical purchasing data, we reduce friction in the buying process, directly lifting the Average Order Value (AOV) and maximizing revenue per square foot.
-   - **Customer Experience:** Anticipating customer needs through intuitive product grouping reduces shopping fatigue. It transforms the retail environment from a mere warehouse into a curated, frictionless purchasing journey, fostering long-term brand loyalty.
+   - **Sales Impact:** By strictly aligning our merchandising and digital ad spend with empirical Lift > 5.0 pairings, we reduce friction in the buying process, directly lifting the Average Order Value (AOV) and maximizing revenue per square foot.
+   - **Customer Experience:** Anticipating customer needs through intuitive product grouping (like bundling the 86% confidence breakfast triad) saves the customer time navigating the store, resulting in a frictionless and highly satisfying shopping journey.
 
 ## How to run the project
 1. Clone this repository.
