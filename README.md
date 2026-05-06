@@ -113,6 +113,9 @@ Here are some of the top meaningful association rules discovered:
    - Run a weekend promotion: "Buy Nachos, get 20% off Salsa Dip." This capitalizes on the high confidence rule to drive total basket value.
 5. **Rules to Ignore:**
    - Rules with high support but lift close to 1 should be ignored. For example, if "Bread Loaf $\rightarrow$ Milk" has a lift of 1.0, it just means both are very popular items bought frequently, but one does not drive the purchase of the other. Promotions should focus on rules with high lift.
+6. **Improving Sales & Customer Experience:**
+   - **Sales:** By strategically placing highly associated items together, we capture impulse purchases, directly increasing the average order value (AOV).
+   - **Customer Experience:** Grouping complementary items (like cleaning supplies or breakfast foods) saves the customer time navigating the store or website, resulting in a more frictionless and satisfying shopping experience.
 
 ## How to run the project
 1. Clone this repository.
