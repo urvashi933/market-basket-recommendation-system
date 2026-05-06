@@ -72,6 +72,32 @@ Here are some of the top meaningful association rules discovered:
 5. **Rule:** `Butter` $\rightarrow$ `Chocolate Spread`
    - **Support:** 8.12% | **Confidence:** 82.49% | **Lift:** 6.87
    - **Interpretation:** Customers who buy Butter alone also have a very high likelihood (82.49%) of buying Chocolate Spread.
+   - **Business Meaning:** Strong standalone breakfast spread association.
+
+6. **Rule:** `Chocolate Spread` $\rightarrow$ `Butter`
+   - **Support:** 8.12% | **Confidence:** 67.59% | **Lift:** 6.87
+   - **Interpretation:** Conversely, 67.59% of Chocolate Spread buyers also purchase Butter.
+   - **Business Meaning:** Demonstrates a bidirectional relationship; both products drive the sale of the other.
+
+7. **Rule:** `Bread Loaf` $\rightarrow$ `Chocolate Spread`
+   - **Support:** 7.78% | **Confidence:** 82.35% | **Lift:** 6.86
+   - **Interpretation:** 82.35% of Bread Loaf purchasers add Chocolate Spread to their transaction.
+   - **Business Meaning:** Bread acts as an excellent "anchor" product to drive sales of sweet spreads.
+
+8. **Rule:** `Chocolate Spread` $\rightarrow$ `Bread Loaf`
+   - **Support:** 7.78% | **Confidence:** 64.81% | **Lift:** 6.86
+   - **Interpretation:** About 65% of people buying Chocolate Spread are also buying Bread Loaf.
+   - **Business Meaning:** Highlights that while bread drives spread sales heavily, the reverse is also decently strong.
+
+9. **Rule:** `Chocolate Spread`, `Bread Loaf` $\rightarrow$ `Butter`
+   - **Support:** 5.11% | **Confidence:** 65.71% | **Lift:** 6.68
+   - **Interpretation:** If a customer already has Chocolate Spread and Bread Loaf in their basket, there is a 65.71% chance they will also buy Butter.
+   - **Business Meaning:** Confirms the viability of a 3-item breakfast bundle.
+
+10. **Rule:** `Chocolate Spread`, `Butter` $\rightarrow$ `Bread Loaf`
+   - **Support:** 5.11% | **Confidence:** 63.01% | **Lift:** 6.67
+   - **Interpretation:** Customers buying both spreads (Chocolate and Butter) will buy Bread Loaf 63% of the time.
+   - **Business Meaning:** These three items are strongly interconnected, regardless of which two the customer starts with.
 
 ## Final Business Recommendations
 1. **Product Bundling:** 
