@@ -80,6 +80,8 @@ top_rules.to_csv('outputs/top_rules.csv', index=False)
 plt.figure(figsize=(8, 6))
 sns.scatterplot(x='support', y='confidence', size='lift', hue='lift', data=filtered_rules, palette='viridis')
 plt.title('Association Rules: Support vs Confidence')
+plt.xlabel('Support (Popularity)')
+plt.ylabel('Confidence (Reliability)')
 plt.savefig('images/rules_scatter.png')
 plt.close()
 
