@@ -10,7 +10,7 @@ os.makedirs('images', exist_ok=True)
 
 # 1. Data Understanding & Loading
 print("Loading dataset...")
-df = pd.read_csv('IITMandi-BA-2504 - Capstone/part_2_market_basket_analysis.csv')
+df = pd.read_csv('dataset/part_2_market_basket_analysis.csv')
 
 # 2. Data Cleaning
 print("Cleaning data...")
