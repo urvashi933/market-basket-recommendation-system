@@ -1,0 +1,42 @@
+support,itemsets
+0.14396887159533073,frozenset({'Granola Bar'})
+0.06559199555308505,frozenset({'Sticky Notes'})
+0.06281267370761534,frozenset({'Notebook'})
+0.1000555864369094,frozenset({'Coffee Beans'})
+0.09616453585325181,frozenset({'Instant Coffee'})
+0.0811561978877154,frozenset({'Baby Wipes'})
+0.057809894385769875,frozenset({'Baby Diapers'})
+0.05614230127848805,frozenset({'Baby Lotion'})
+0.061145080600333516,frozenset({'Green Tea'})
+0.05947748749305169,frozenset({'Black Tea'})
+0.058365758754863814,frozenset({'Honey Jar'})
+0.0839355197331851,frozenset({'Fabric Softener'})
+0.07281823235130629,frozenset({'Dishwash Liquid'})
+0.07003891050583658,frozenset({'Laundry Detergent'})
+0.06837131739855476,frozenset({'Peanut Butter'})
+0.07837687604224569,frozenset({'Conditioner'})
+0.09727626459143969,frozenset({'Salsa Dip'})
+0.07504168982768204,frozenset({'Nachos'})
+0.0744858254585881,frozenset({'Potato Chips'})
+0.09838799332962757,frozenset({'Butter'})
+0.09449694274596998,frozenset({'Bread Loaf'})
+0.1000555864369094,frozenset({'French Press'})
+0.07003891050583658,frozenset({'Pen Pack'})
+0.07115063924402446,frozenset({'Shampoo'})
+0.07003891050583658,frozenset({'Body Wash'})
+0.07337409672040023,frozenset({'Oats Pack'})
+0.05725403001667593,frozenset({'Almond Pack'})
+0.12006670372429128,frozenset({'Chocolate Spread'})
+0.06559199555308505,frozenset({'Electrolyte Drink'})
+0.05947748749305169,frozenset({'Protein Bar'})
+0.057809894385769875,"frozenset({'Coffee Beans', 'French Press'})"
+0.054474708171206226,"frozenset({'Coffee Beans', 'Instant Coffee'})"
+0.05725403001667593,"frozenset({'Instant Coffee', 'French Press'})"
+0.05225125069483046,"frozenset({'Dishwash Liquid', 'Fabric Softener'})"
+0.057809894385769875,"frozenset({'Nachos', 'Salsa Dip'})"
+0.054474708171206226,"frozenset({'Salsa Dip', 'Potato Chips'})"
+0.0811561978877154,"frozenset({'Chocolate Spread', 'Butter'})"
+0.05892162312395775,"frozenset({'Butter', 'Bread Loaf'})"
+0.07782101167315175,"frozenset({'Chocolate Spread', 'Bread Loaf'})"
+0.05113952195664258,"frozenset({'Chocolate Spread', 'Butter', 'Bread Loaf'})"
+0.0528071150639244,"frozenset({'Granola Bar', 'French Press'})"
