@@ -29,14 +29,14 @@ support,itemsets
 0.12006670372429128,frozenset({'Chocolate Spread'})
 0.06559199555308505,frozenset({'Electrolyte Drink'})
 0.05947748749305169,frozenset({'Protein Bar'})
-0.057809894385769875,"frozenset({'Coffee Beans', 'French Press'})"
+0.057809894385769875,"frozenset({'French Press', 'Coffee Beans'})"
 0.054474708171206226,"frozenset({'Instant Coffee', 'Coffee Beans'})"
-0.05725403001667593,"frozenset({'Instant Coffee', 'French Press'})"
-0.05225125069483046,"frozenset({'Fabric Softener', 'Dishwash Liquid'})"
+0.05725403001667593,"frozenset({'French Press', 'Instant Coffee'})"
+0.05225125069483046,"frozenset({'Dishwash Liquid', 'Fabric Softener'})"
 0.057809894385769875,"frozenset({'Nachos', 'Salsa Dip'})"
 0.054474708171206226,"frozenset({'Potato Chips', 'Salsa Dip'})"
-0.0811561978877154,"frozenset({'Chocolate Spread', 'Butter'})"
-0.05892162312395775,"frozenset({'Bread Loaf', 'Butter'})"
-0.07782101167315175,"frozenset({'Chocolate Spread', 'Bread Loaf'})"
-0.05113952195664258,"frozenset({'Chocolate Spread', 'Butter', 'Bread Loaf'})"
+0.0811561978877154,"frozenset({'Butter', 'Chocolate Spread'})"
+0.05892162312395775,"frozenset({'Butter', 'Bread Loaf'})"
+0.07782101167315175,"frozenset({'Bread Loaf', 'Chocolate Spread'})"
+0.05113952195664258,"frozenset({'Butter', 'Bread Loaf', 'Chocolate Spread'})"
 0.0528071150639244,"frozenset({'Granola Bar', 'French Press'})"
