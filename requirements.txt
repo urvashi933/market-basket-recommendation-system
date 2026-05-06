@@ -1,6 +1,5 @@
-pandas
-numpy
-matplotlib
-seaborn
-mlxtend
-gdown
+pandas==2.3.3
+numpy==2.4.2
+matplotlib==3.10.8
+seaborn==0.13.2
+mlxtend==0.24.0
