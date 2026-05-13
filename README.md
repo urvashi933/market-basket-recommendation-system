@@ -1,10 +1,38 @@
-# Market Basket Recommendation System
+# 🛒 Market Basket Recommendation System
+
+<p align="center">
+  <a href="#business-problem"><b>Business Problem</b></a> •
+  <a href="#dataset-description"><b>Dataset</b></a> •
+  <a href="#steps-performed"><b>Pipeline</b></a> •
+  <a href="#top-rules-with-interpretation"><b>Insights</b></a> •
+  <a href="#final-business-recommendations"><b>Strategy</b></a> •
+  <a href="#how-to-run-the-project"><b>Run Project</b></a>
+</p>
+
+---
+
+## 📌 Navigation
+- [🎯 Business Problem](#business-problem)
+- [📊 Dataset Details](#dataset-description)
+- [🛠️ Tools & Libraries](#tools-and-libraries)
+- [⚙️ Pipeline Steps](#steps-performed)
+- [🧹 Data Cleaning](#data-cleaning-summary)
+- [🧺 Basket Preparation](#basket-preparation-method)
+- [🔍 Frequent Itemsets & Association Rules](#frequent-itemsets-summary)
+- [💡 Top Insights & Rules](#top-rules-with-interpretation)
+- [📈 Business Recommendations](#final-business-recommendations)
+- [🚀 Execution Guide](#how-to-run-the-project)
 
 ## Project Title
 Market Basket Analysis and Product Recommendation System
 
 ## Business Problem
 To remain competitive in the retail landscape, our organization aims to optimize product placement, enhance cross-selling and upselling pipelines, and design data-driven promotional bundles. By mining transactional data to uncover latent purchasing patterns and product affinities, we can strategically tailor product recommendations, optimize store planograms (layouts), and deploy targeted marketing interventions. This initiative directly targets an increase in the Average Order Value (AOV) and overall customer lifetime value.
+
+## Dataset Sources
+The primary transactional dataset used for this analysis is sourced from the following repository:
+- **Direct Link:** [Dataset Folder](https://drive.google.com/drive/folders/1XC-00liRViTlyeFaig3mYTkQcBrheph6?usp=sharing)
+- **Primary File:** `part_2_market_basket_analysis.csv`
 
 ## Dataset Description
 The dataset encompasses point-of-sale (POS) transaction records from our retail operations. Key attributes include:
@@ -22,6 +50,24 @@ The dataset encompasses point-of-sale (POS) transaction records from our retail 
 - **Row:** Represents a granular line-item within a given transaction.
 - **Why Market Basket Analysis is useful:** MBA allows us to quantitatively measure product co-occurrence. Moving beyond intuition, it provides empirical evidence of purchasing behaviors, enabling inventory optimization, targeted CRM campaigns, and strategic assortment planning.
 - **Cross-selling & Upselling:** High-affinity associations (e.g., SKU A highly predicts the purchase of SKU B) empower our recommendation engines to dynamically suggest complementary products, effectively increasing the basket attachment rate.
+
+## Tools and Libraries
+The following technological stack was utilized to build this recommendation system:
+- **Python (v3.8+):** The primary programming language for the analysis.
+- **Pandas:** Used for robust data manipulation, cleaning, and one-hot encoding of transaction baskets.
+- **NumPy:** Facilitated high-performance numerical operations on the sparse transaction matrix.
+- **Mlxtend:** The core library used for implementing the **FP-Growth** algorithm and generating **Association Rules**.
+- **Matplotlib & Seaborn:** Used for creating statistical visualizations, including support-decay curves and rule-strength scatter plots.
+
+## Steps Performed
+The project was executed through a structured data science pipeline:
+1. **Data Understanding & Loading:** Imported the raw POS transaction records and conducted an initial assessment of the schema.
+2. **Data Cleaning:** Processed the dataset to remove negative quantities, handle missing values, and deduplicate entries.
+3. **Transaction Basket Preparation:** Aggregated items by `TransactionID` and performed one-hot encoding to create a sparse binary matrix representing customer baskets.
+4. **Frequent Itemset Generation:** Applied the **FP-Growth** algorithm to identify item combinations that meet the minimum support threshold.
+5. **Association Rule Generation:** Derived rules using statistical metrics (Support, Confidence, and Lift) to quantify product relationships.
+6. **Rule Filtering & Visualization:** Filtered for high-lift rules and generated scatter plots to identify the most actionable affinities.
+7. **Business Strategy Formulation:** Translated the top-performing rules into specific, data-driven recommendations for bundling, placement, and promotions.
 
 ## Data Cleaning Summary
 To ensure the integrity of our association rules, the raw POS data underwent the following preprocessing pipeline:
