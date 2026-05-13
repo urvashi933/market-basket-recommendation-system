@@ -1,4 +1,4 @@
-# 🛒 Market Basket Recommendation System
+# 🛒 Part 2: Market Basket Recommendation System
 
 <p align="center">
   <a href="#project-title"><b>Project Title</b></a> •
